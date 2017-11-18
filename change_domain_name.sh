@@ -20,6 +20,7 @@ if ! grep "Host $DOMAIN_OLD;" /etc/nginx/sites-enabled/* > /dev/null; then
 fi
 
 sed -e "s/$DOMAIN_OLD/$DOMAIN_NEW/g" -i \
+	/etc/hosts \
 	/etc/nginx/sites-enabled/* \
 	/opt/alfresco-community/tomcat/conf/server.xml \
 	/opt/alfresco-community/tomcat/shared/classes/alfresco-global.properties \
